@@ -1,0 +1,159 @@
+.heading{
+  text-align:center;
+  font-size:36px;
+  color:green;
+  margin-bottom:30px;
+}
+.sub-heading{
+  text-align:center;
+  font-size:24px;
+  color:darkblue;
+  margin:40px;
+}
+
+.form-details{
+  width:40%;
+  margin:20px 40px;
+  font-size:16px;
+
+  fieldset{
+    padding:15px;
+    border:thin solid #ccc;
+  }
+  label{
+    display:block;
+    font-weight:600;
+    input{
+      margin:0 10px;
+
+    }
+  }
+
+  .input-fields,select{
+    width:300px;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    outline:none;
+    border-radius:2px;
+  }
+
+  .errors{
+    color:red;
+    font-weight: 600;
+    font-size:14px;
+    margin-bottom:10px;
+
+  }
+  button{
+    background:red;
+    color:#fff;
+    font-weight:bold;
+    padding:10px;
+    width:100px;
+    border:0;
+    margin-top:10px;
+    border-radius:5px;
+  }
+}
+.checkout-container{
+  display: flex;
+
+}
+
+
+.billing{
+  margin-bottom:20px;
+
+  legend{
+    font-weight:bold;
+    font-size:18px;
+  }
+}
+.shipping{
+  margin-top:30px;
+  legend{
+    font-weight:bold;
+    font-size:20px;
+  }
+}
+
+.shipping-table {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 100px;
+  font-family: 'Dosis', sans-serif;
+
+  thead {
+    background: #04b1da;
+    color: #fff;
+
+    th {
+      text-transform: uppercase;
+    }
+  }
+
+  tr {
+    td, th {
+      width: 100px;
+      margin: 4px;
+      padding: 4px;
+      text-align: center;
+
+    }
+
+    td {
+      padding: 10px;
+      border: thin solid #f2f2f2;
+      text-transform: capitalize;
+      color: #777;
+      font-weight: 600;
+    }
+
+  }
+}
+
+.order-button,.home-button{
+  background:orange;
+  padding:18px;
+  width:200px;
+  border:none;
+  border-radius:4px;
+  color:#fff;
+  font-size:16px;
+  font-weight: 600;
+  margin:3px 0 20px 973px;
+
+}
+
+.order-button.disabled{
+  background-color:gray;
+  opacity:0.5;
+  &:hover{
+    opacity: 0.5;
+    cursor:not-allowed;
+  }
+}
+.submit-button.disabled{
+  background-color:gray;
+  opacity:0.5;
+  &:hover{
+    opacity: 0.5;
+    cursor:not-allowed;
+  }
+
+}
+.customer-details{
+  background: #f2f2f2;
+}
+.checkout{
+  li{
+    margin: 5px;
+    padding: 10px;
+  }
+  p{
+    width: 200px;
+  }
+}
+

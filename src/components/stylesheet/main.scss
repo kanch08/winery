@@ -1,0 +1,202 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  //font-family: 'Dosis', sans-serif;
+  button {
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+      transition: all linear 0.2s;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    padding: 10px 0;
+    color: #666;
+  }
+}
+
+$dark-blue: 00008 B;
+$pink:#b53f7f;
+body {
+  background: #F3F3F3;
+}
+
+
+.App {
+  font-family: 'Dosis', sans-serif;
+  position: relative;
+
+  .cart {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+  }
+
+  .cartcontainer {
+    position: relative;
+    top: 30px;
+  }
+}
+
+.final-total {
+  color: #555;
+  margin: 14px 800px;
+
+  p {
+    font-weight: 600;
+  }
+
+}
+
+.product-detail {
+  width: 80%;
+  margin: 20px auto;
+  font-family: 'Cabin Condensed', sans-serif;
+  background: #fff;
+
+
+  .top-section {
+    display: flex;
+
+    .thumbnail {
+      width: 40%;
+      border-right: 1px solid #f3f0f0;
+
+      img {
+        width: 350px;
+        margin: 30px;
+        box-shadow: 0px 0px 10px 1px #ccc;
+      }
+    }
+
+    .short-description {
+      width: 100%;
+      margin: 10px 30px;
+      padding: 20px;
+
+      .pdp-price-info {
+        color: #666;
+        font-size: 24px;
+        position:relative;
+
+        .pdp-title {
+          text-align: start;
+          font-size: 32px;
+          padding: 0;
+          margin-bottom:5px;
+        }
+
+        .pdp-name {
+          text-align: start;
+          color: #a19d9d;
+          font-weight: 200;
+          font-size: 20px;
+          padding: 0;
+          position: relative;
+
+          &::after {
+            content: "";
+            positon: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 2px solid #f3f0f0;
+            margin: 5px 0 10px 0;
+          }
+        }
+        .pdp-wishlist{
+          position:absolute;
+          top:4px;
+          right:10px;
+          font-size:30px;
+          color:#ccc;
+          cursor:pointer;
+        &:hover{
+         //color:#1E6B7B;
+          color:$pink;
+        }
+        }
+
+        span {
+          margin-left:20px;
+          font-weight:500;
+          letter-spacing: 0.5px;
+          color: #FF905A;
+        }
+        p{
+          margin:10px 0;
+          font-weight:200;
+          font-size:16px;
+          color:#a19d9d;
+        }
+
+      }
+    }
+
+    .pdp-size,.pdp-color{
+      margin:20px 0;
+      select{
+        width:150px;
+        padding:8px;
+        background:#fff;
+        outline:none;
+        border-radius:2px;
+        font-size:12px;
+        font-weight: bold;
+        margin-left:10px;
+      }
+    }
+
+
+    .btn-add,.btn-wishlist{
+      padding:15px;
+      border:0;
+      border-radius:2px;
+      outline:none;
+      font-weight:600;
+      font-size:14px;
+      color:#fff;
+      background:#013243;
+      margin-right:20px;
+      i{
+        margin-right:10px;
+      }
+    }
+  }
+  .pdp-description {
+    width: 100%;
+    position:relative;
+    color:#666;
+    h2 {
+      color:#333;
+      font-size:24px;
+      font-weight:700;
+      padding:20px;
+    }
+    p {
+      padding:0 20px;
+      color: #404040;
+    }
+
+
+    &::before{
+      content:"";
+      position:absolute;
+      display:block;
+      border-top:1px solid #f3f0f0;
+      width:100%;
+    }
+
+
+    //border: 1px solid #C1C1C1;
+
+
+  }
+}

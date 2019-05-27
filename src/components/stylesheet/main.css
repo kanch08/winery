@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+  * button {
+    cursor: pointer;
+    opacity: 0.8; }
+    * button:hover {
+      opacity: 1;
+      transition: all linear 0.2s; }
+  * h1 {
+    text-align: center;
+    padding: 10px 0;
+    color: #666; }
+
+body {
+  background: #F3F3F3; }
+
+.App {
+  font-family: 'Dosis', sans-serif;
+  position: relative; }
+  .App .cart {
+    position: absolute;
+    top: 30px;
+    right: 50px; }
+  .App .cartcontainer {
+    position: relative;
+    top: 30px; }
+
+.final-total {
+  color: #555;
+  margin: 14px 800px; }
+  .final-total p {
+    font-weight: 600; }
+
+.product-detail {
+  width: 80%;
+  margin: 20px auto;
+  font-family: 'Cabin Condensed', sans-serif;
+  background: #fff; }
+  .product-detail .top-section {
+    display: flex; }
+    .product-detail .top-section .thumbnail {
+      width: 40%;
+      border-right: 1px solid #f3f0f0; }
+      .product-detail .top-section .thumbnail img {
+        width: 350px;
+        margin: 30px;
+        box-shadow: 0px 0px 10px 1px #ccc; }
+    .product-detail .top-section .short-description {
+      width: 100%;
+      margin: 10px 30px;
+      padding: 20px; }
+      .product-detail .top-section .short-description .pdp-price-info {
+        color: #666;
+        font-size: 24px;
+        position: relative; }
+        .product-detail .top-section .short-description .pdp-price-info .pdp-title {
+          text-align: start;
+          font-size: 32px;
+          padding: 0;
+          margin-bottom: 5px; }
+        .product-detail .top-section .short-description .pdp-price-info .pdp-name {
+          text-align: start;
+          color: #a19d9d;
+          font-weight: 200;
+          font-size: 20px;
+          padding: 0;
+          position: relative; }
+          .product-detail .top-section .short-description .pdp-price-info .pdp-name::after {
+            content: "";
+            positon: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 2px solid #f3f0f0;
+            margin: 5px 0 10px 0; }
+        .product-detail .top-section .short-description .pdp-price-info .pdp-wishlist {
+          position: absolute;
+          top: 4px;
+          right: 10px;
+          font-size: 30px;
+          color: #ccc;
+          cursor: pointer; }
+          .product-detail .top-section .short-description .pdp-price-info .pdp-wishlist:hover {
+            color: #b53f7f; }
+        .product-detail .top-section .short-description .pdp-price-info span {
+          margin-left: 20px;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          color: #FF905A; }
+        .product-detail .top-section .short-description .pdp-price-info p {
+          margin: 10px 0;
+          font-weight: 200;
+          font-size: 16px;
+          color: #a19d9d; }
+    .product-detail .top-section .pdp-size, .product-detail .top-section .pdp-color {
+      margin: 20px 0; }
+      .product-detail .top-section .pdp-size select, .product-detail .top-section .pdp-color select {
+        width: 150px;
+        padding: 8px;
+        background: #fff;
+        outline: none;
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px; }
+    .product-detail .top-section .btn-add, .product-detail .top-section .btn-wishlist {
+      padding: 15px;
+      border: 0;
+      border-radius: 2px;
+      outline: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      background: #013243;
+      margin-right: 20px; }
+      .product-detail .top-section .btn-add i, .product-detail .top-section .btn-wishlist i {
+        margin-right: 10px; }
+  .product-detail .pdp-description {
+    width: 100%;
+    position: relative;
+    color: #666; }
+    .product-detail .pdp-description h2 {
+      color: #333;
+      font-size: 24px;
+      font-weight: 700;
+      padding: 20px; }
+    .product-detail .pdp-description p {
+      padding: 0 20px;
+      color: #404040; }
+    .product-detail .pdp-description::before {
+      content: "";
+      position: absolute;
+      display: block;
+      border-top: 1px solid #f3f0f0;
+      width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
