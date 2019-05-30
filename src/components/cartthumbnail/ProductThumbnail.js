@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import Pulse from 'react-reveal/Pulse';
 import {Link} from "react-router-dom";
 
-
 class ProductThumbnail extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +32,6 @@ class ProductThumbnail extends Component {
         let imageRender = this.props.images;
         let imageKeys = Object.keys(this.props.images[0]);
 
-
         return (
             <Pulse>
                 <div className="productThumbnail"
@@ -53,6 +51,7 @@ class ProductThumbnail extends Component {
                             }
                         )
                     }
+
                     <div className="detail">
                         <p>{productname}</p>
                         <p>{'\u20B9'}{price}</p>

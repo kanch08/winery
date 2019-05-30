@@ -20,6 +20,7 @@ class ProductForm extends Component {
         this.state = {
             isBillingAddressSame: false,
             isSubmitted: false,
+            billingAddressFlag:false,
 
 
         }
@@ -40,31 +41,39 @@ class ProductForm extends Component {
 
     handleShippingAddressCheckbox = (setFieldValue, values) => {
 
-
         if (this.state.isBillingAddressSame) {
-            Object.keys(values).forEach(item => {
+            if(this.state.billingAddressFlag) {
+                Object.keys(values).forEach(item=>{
+                    if(item.includes('shipping_')){
+                        setFieldValue([item],'');
+                    }
+                })
 
-                setFieldValue(['shipping_' + item], '');
+            } else{
+                Object.keys(values).forEach(item => {
+                    setFieldValue(['shipping_' + item], '');
+                });
+            }
 
-            })
 
         } else {
+            if(this.state.billingAddressFlag) {
+                Object.keys(values).forEach(item=>{
+                    if(item.includes('shipping_')){
+                        let strippedField = item.substr(9,item.length);
+                        setFieldValue([item],values[strippedField]);
+                    }
+                })
 
-            Object.keys(values).forEach(item => {
-                if (item.includes('shipping_')) {
-                    console.log('inside shipping value',item);
-                    setFieldValue([item], values[item]);
-                } else {
-                    console.log('is this ever in else block');
+            } else{
+                Object.keys(values).forEach(item => {
                     setFieldValue(['shipping_' + item], values[item]);
-
-                }
-
-            })
-
+                });
+            }
         }
         this.setState({
-            isBillingAddressSame: !this.state.isBillingAddressSame
+            isBillingAddressSame: !this.state.isBillingAddressSame,
+            billingAddressFlag : true,
         })
 
 

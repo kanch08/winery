@@ -1,24 +1,33 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import '../stylesheet/main.css'
-import {addToCart,addToWishlist} from "../actions/Action";
+import {addToCart, addToWishlist} from "../actions/Action";
 import {toast} from "react-toastify";
-import CartMenuOption from "./CartMenuOption";
+import Cart from "./Cart";
+import Wishlist from "./Wishlist";
 import SelectSize from "./cartMenuComponent/SelectSize";
 import RadioButton from "./cartMenuComponent/RadioButton";
+import _ from "lodash";
 
 class ProductDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            size: "small",
-            currentColor: this.props.currentColor,
+            size : "small",
+            id:props.id,
+            displayColorButton : false,
+            // currentColor: this.props.currentColor,
+            tcolor:this.props.product.default,
             selectedImage: this.props.defaultImage,
+
         }
 
     }
 
+
     itemAddedToast = () => toast.success('Item Successfully Added', {autoClose: 1000, position: "top-center"},);
+    itemAddedToWishlistToast = () => toast.warning('Item Added to Wishlist', {autoClose: 1000, position: "top-center"},);
+
     handleAdd = (e) => {
         e.preventDefault();
         let selectSize = this.props.name + " size";
@@ -26,31 +35,71 @@ class ProductDetails extends Component {
 
         this.props.addToCart({
             id: this.state.id,
-            name: this.props.name,
-            color: this.state.currentColor,
-            price: this.props.price,
-            size: this.state[selectSize] || this.state.size
+            name: this.props.product.productname,
+            color: this.state.tcolor,
+            price: this.props.product.price,
+            size: this.state[selectSize] || this.state.size,
+
         });
     }
 
-    handleWishlist=(event)=>{
-        console.log("item added to wishlist");
+    colorButton = (event) => {
+        event.preventDefault();
+        this.setState({
+            displayColorButton : !this.state.displayColorButton
+        });
+
+    }
+
+
+    handleRadioChange=(event)=>{
+        console.log('handle on radio change called',event);
+        event.stopPropagation();
+        const id=_.uniqueId();
+        this.setState({
+            currentColor:event.target.value,
+            tcolor: event.target.value,
+            id
+        });
+
+    }
+
+
+
+    handleChange = event => {
+        event.stopPropagation();
+        const id=_.uniqueId();
+        this.setState({
+            size: event.target.value,
+            id
+        });
+
+    }
+
+    handleAddToWishlist = (event) => {
+       this.itemAddedToWishlistToast();
         this.props.addToWishlist({
             id: this.state.id,
-            name : this.props.name,
-            color: this.state.currentColor,
-            price :this.props.price,
+            name: this.props.product.productname,
+            color: this.state.tcolor,
+            price: this.props.product.price,
+            size: this.state.size,
 
         });
     }
 
 
     render() {
-        const {product, images, id} = this.props;
-        const {productname, price, default: color, description} = product;
-        const image = images[0][color];
+        const {product, images} = this.props;
         let imageKeys = Object.keys(this.props.images[0]);
+        const { productname, price, description } = product;
+        const image = images[0][this.state.tcolor];
+
         return (
+            <>
+            <Cart/>
+            <Wishlist/>
+
             <div className="product-detail">
                 <div className="top-section">
                     <div className="thumbnail">
@@ -66,41 +115,41 @@ class ProductDetails extends Component {
                             <p>Additional tax may apply; charged at checkout</p>
 
                             <div className="pdp-wishlist">
-                                <i onClick={this.handleWishlist}
-                                   className="fas fa-heart">
+                                <i
+                                    onClick={this.handleAddToWishlist}
+                                    className="fas fa-heart"
+                                >
 
                                 </i>
                             </div>
                         </div>
                         <div className="pdp-size">
                             <p>SELECT SIZE <i className="fas fa-angle-right"></i>
-                                <SelectSize/>
+                            <SelectSize
+                                    name={this.props.name}
+                                    handleChange={(events) => this.handleChange(events)}
+                            />
                             </p>
+
                         </div>
                         <div className="pdp-color">
                             <p>SELECT COLOR <i className="fas fa-angle-right"></i>
+                            <RadioButton
+                                 name={productname}
+                                // colorButtonToggle={this.colorButton}
+                                imageKeys={imageKeys}
+                                 onRadioChange={this.handleRadioChange}
+                                 currentColor={this.state.tcolor}
+                            />
+                            <RadioButton/>
                             </p>
-                            {/*<RadioButton*/}
-                            {/*    name={this.props.name}*/}
-                            {/*    colorButtonToggle = {this.colorButton}*/}
-                            {/*    imageKeys = { imageKeys }*/}
-                            {/*    onRadioChange ={this.handleRadioChange}*/}
-                            {/*    currentColor={this.state.currentColor}*/}
-                            {/*/>*/}
-                            {/*<RadioButton/></p>*/}
                         </div>
                         <div className="pdp-add">
-                            <button
-                                className="btn-add"
-                                onClick={this.handleAdd}
-                            >
-                                <i className="fas fa-shopping-cart">
-                                </i>Add To Cart
+                            <button className="btn-add" onClick={this.handleAdd}>
+                                <i className="fas fa-shopping-cart"></i>Add To Cart
                             </button>
-                            <button
-                                className="btn-wishlist"
-                                onClick={this.handleAddToWishlist}
-                            >
+
+                            <button className="btn-wishlist" onClick={this.handleAddToWishlist}>
                                 <i className="fas fa-hand-holding-heart"></i>
                                 Add To Wishlist
                             </button>
@@ -119,6 +168,7 @@ class ProductDetails extends Component {
 
 
             </div>
+                </>
 
 
         );
@@ -134,8 +184,6 @@ const mapStateToProps = (state, ownProps) => {
         addedItems: state.cartReducer.addedItems,
         product,
         wishlistItems: state.wishlistReducer.wishlistItems
-
-
     }
 }
 

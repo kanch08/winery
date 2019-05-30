@@ -6,9 +6,14 @@ import {clearCart, subQuantity, addQuantity, removeItem} from "../actions/Action
 import CartItemButtons from "./CartItemButtons";
 import swal from 'sweetalert';
 import {toast} from 'react-toastify';
+import Pulse from 'react-reveal/Pulse';
 
 
 class CartItem extends Component {
+    state={
+
+       isCartEmpty:this.props.isCartEmpty,
+    }
 
     handleContinue = (event) => {
         const {history} = this.props;
@@ -19,6 +24,9 @@ class CartItem extends Component {
         // event.stopPropagation();
         console.log("cart is now empty");
         this.props.clearCart();
+        this.setState({
+            isCartEmpty:true,
+        })
     }
 
     addQuantity = (id,quantity) => {
@@ -60,8 +68,22 @@ class CartItem extends Component {
     render() {
 
         return (
+            <>
+            {this.state.isCartEmpty?
+                <div className="empty-cart">
+                    <Pulse><p>Oops!!Your cart is empty</p></Pulse>
+                    <button
+                        onClick={this.handleContinue}
+                    >
+                        Continue Shopping
+                    </button>
+                </div>
+
+
+
+                :
             <div className="cartItem">
-                <h1>Shopping Cart</h1>
+                <h1>SHOPPING CART</h1>
                 <table>
                     <thead>
                     <tr>
@@ -105,16 +127,25 @@ class CartItem extends Component {
                 emptyCart={this.emptyCart}
                 gotoCheckout={ this.gotoCheckout }
             />
-            </div>
+            </div>}
+        </>
+
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    let length = state.cartReducer.addedItems.length;
+    let isCartEmpty= () => (length ===0);
+    console.log("value of CartEmpty",isCartEmpty());
+    console.log("length is ",length)
+
     return {
         thumb: state.reducer.thumb,
         addedItems: state.cartReducer.addedItems,
         total: state.cartReducer.total,
+        isCartEmpty:isCartEmpty(),
+
     }
 }
 

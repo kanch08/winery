@@ -4,9 +4,7 @@ class RadioButton extends Component {
 
 
     render() {
-        const {name, colorButtonToggle, imageKeys, onRadioChange, currentColor} = this.props;
-
-
+        const {name, colorButtonToggle, imageKeys=[], onRadioChange, currentColor} = this.props;
         const newImageKeys = [];
         newImageKeys[1] = currentColor;
         const tempImageKeys = imageKeys.filter(item => item !== currentColor);

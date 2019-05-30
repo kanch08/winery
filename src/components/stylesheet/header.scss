@@ -5,15 +5,19 @@ $navy-blue:#013243;
 Header{
   font-family: 'Roboto', sans-serif;
   width:100%;
+  background:$navy-blue;
 
   .offer-section{
-    background:$navy-blue;
     position:relative;
-
-    padding:15px;
+    width: 60%;
+    top:10px;
+    left:50px;
+    padding:20px;
     color:#fff;
     overflow: hidden;
-    height:20px;
+    height:10px;
+    font-weight:bold;
+    font-size:14px;
 
   }
   nav{

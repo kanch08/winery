@@ -14,7 +14,7 @@
     color: #666; }
 
 body {
-  background: #F3F3F3; }
+  background: #fff; }
 
 .App {
   font-family: 'Dosis', sans-serif;
@@ -96,7 +96,8 @@ body {
           font-size: 16px;
           color: #a19d9d; }
     .product-detail .top-section .pdp-size, .product-detail .top-section .pdp-color {
-      margin: 20px 0; }
+      margin: 20px 0;
+      positon: relative; }
       .product-detail .top-section .pdp-size select, .product-detail .top-section .pdp-color select {
         width: 150px;
         padding: 8px;
@@ -106,6 +107,14 @@ body {
         font-size: 12px;
         font-weight: bold;
         margin-left: 10px; }
+      .product-detail .top-section .pdp-size ul, .product-detail .top-section .pdp-color ul {
+        position: relative;
+        top: -16px;
+        left: 128px;
+        list-style: none; }
+        .product-detail .top-section .pdp-size ul li, .product-detail .top-section .pdp-color ul li {
+          display: inline-block;
+          margin-right: 20px; }
     .product-detail .top-section .btn-add, .product-detail .top-section .btn-wishlist {
       padding: 15px;
       border: 0;
@@ -136,5 +145,50 @@ body {
       display: block;
       border-top: 1px solid #f3f0f0;
       width: 100%; }
+
+.breadcrumbs {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0; }
+  .breadcrumbs .bc a {
+    text-decoration: none;
+    color: #1E6B7B;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "Source Sans Pro";
+    margin: 0 5px; }
+  .breadcrumbs:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%; }
+
+.wishlist {
+  position: absolute;
+  top: -18px;
+  right: 60px; }
+  .wishlist i {
+    font-size: 20px;
+    color: #2c4d59; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #CCC; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1E6B7B; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; }
 
 /*# sourceMappingURL=main.css.map */

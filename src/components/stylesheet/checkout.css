@@ -1,8 +1,10 @@
 .heading {
   text-align: center;
   font-size: 36px;
-  color: green;
-  margin-bottom: 30px; }
+  color: #666666;
+  margin-bottom: 30px;
+  font-family: serif;
+  letter-spacing: 2px; }
 
 .sub-heading {
   text-align: center;
@@ -11,8 +13,8 @@
   margin: 40px; }
 
 .form-details {
-  width: 40%;
-  margin: 20px 40px;
+  width: 450px;
+  margin: 20px 20px 20px 100px;
   font-size: 16px; }
   .form-details fieldset {
     padding: 15px;
@@ -36,7 +38,7 @@
     font-size: 14px;
     margin-bottom: 10px; }
   .form-details button {
-    background: red;
+    background: #1E6B7B;
     color: #fff;
     font-weight: bold;
     padding: 10px;
@@ -64,9 +66,11 @@
   max-width: 500px;
   width: 100%;
   margin-top: 100px;
-  font-family: 'Dosis', sans-serif; }
+  font-family: 'Dosis', sans-serif;
+  box-shadow: 0px 0px 9px 1px #ccc;
+  background: rgba(255, 255, 255, 0.5); }
   .shipping-table thead {
-    background: #04b1da;
+    background: #015370;
     color: #fff; }
     .shipping-table thead th {
       text-transform: uppercase; }
@@ -76,10 +80,13 @@
     padding: 4px;
     text-align: center; }
   .shipping-table tr td {
+    width: 150px;
+    margin: 5px;
+    text-align: center;
     padding: 10px;
-    border: thin solid #f2f2f2;
+    border: thin solid #f1f1f1;
     text-transform: capitalize;
-    color: #777;
+    color: #333;
     font-weight: 600; }
 
 .order-button, .home-button {

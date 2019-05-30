@@ -6,14 +6,18 @@ table{
   width: 100%;
   margin: auto;
   font-family: 'Dosis', sans-serif;
+  border: 2px solid #013242;
+  box-shadow: 0px 0px 9px 1px #ccc;
+  background: rgba(255,255,255,0.5);
+  padding:10px 5px;
   thead{
-    background: #04b1da;
+    background: #015370;
     color: #fff;
     th{
       text-transform: uppercase;
       width:180px;
       margin: 5px;
-      padding: 10px;
+      padding:  10px;
       text-align: center;
     }
   }
@@ -21,13 +25,13 @@ table{
     tr{
       background:$grey-color ;
       td{
-        width:180px;
+        width:150px;
         margin: 5px;
         text-align: center;
         padding:10px;
-        border: thin solid #f2f2f2;
+        border: thin solid #f1f1f1;
         text-transform: capitalize;
-        color: #777;
+        color: #333;
         font-weight: 600;
         select{
           width:90px;
@@ -38,12 +42,9 @@ table{
         }
       }
       &:nth-child(even){
-        background:$cream-color;
+       background:#e0d8d885;
       }
-
     }
-
-
   }
 
 
@@ -68,7 +69,7 @@ table{
   button{
     font-family: 'Dosis', sans-serif;
     margin: 10px;
-    background: red;
+    background: #f19c01;;
     border: none;
     padding:7px 10px;
     font-size: 16px;
@@ -112,7 +113,6 @@ table{
   margin:50px auto;
   padding:10px;
 
-
   ul{
     list-style: none;
     margin:10px;
@@ -122,12 +122,42 @@ table{
       font-weight:600;
 
       p{
-        color:red;
+        color:#015370;
         text-transform: uppercase;
         font-size:16px;
         font-weight:600;
         margin-right:10px;
       }
+    }
+  }
+}
+
+.empty-cart{
+ width:350px;
+  margin:100px auto;
+  text-align: center;
+  p{
+    font-size:24px;
+    font-weight: bold;
+    color:red;
+    font-family: 'serif';
+  }
+  button{
+    margin:20px 0;
+    background: #f19c01;
+    border: none;
+    padding: 14px 20px;
+    font-size: 14px;
+    color:#fff;
+    opacity: 0.8;
+    text-transform: capitalize;
+    border-radius:4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: Roboto;
+    &:hover{
+      opacity: 1;
+      transition: all linear 0.2s;
     }
   }
 }

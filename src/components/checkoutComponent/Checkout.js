@@ -45,8 +45,13 @@ class Checkout extends Component {
                     <Pulse> <h2 className="heading">Your Billing Details</h2></Pulse>
                 </div>
                 <div className="checkout-container">
+                    <div>
                     <ProductForm toggleSubmitState={this.toggleSubmitState}/>
+                    </div>
+                    <div className="shipping">
+                        <h3 className="sub-heading">Order Details</h3>
                     <Shipping/>
+                    </div>
                 </div>
                 <button
                     disabled={!this.state.isFormSubmitted}

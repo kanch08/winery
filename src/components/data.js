@@ -38,7 +38,7 @@ const data = {
         {
             "id": "104",
             "alt": "Image 01",
-            "productname": "allen solly",
+            "productname": "Allen Solly",
             "category": "tshirt",
             "price": 600,
             "default": "yellow","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -65,12 +65,16 @@ const data = {
     offers:[
         {
             "id":"201",
-            "text":"Free shipping on orders above INR 500"
+            "text":"Free shipping on prepaid-orders above INR 500"
 
         },
         {
             "id":"202",
             "text":"Great Offers from the Great Brands"
+        },
+        {
+            "id":"203",
+            "text":"Women Fashion Sale Coming Soon!!"
         }
     ],
     addedItems: [],

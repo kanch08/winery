@@ -39,7 +39,6 @@ class CartMenuOption extends Component{
     }
 
     handleChange = event => {
-
         event.stopPropagation();
         const id=_.uniqueId();
         this.setState({
