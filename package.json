@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "express": "^4.17.1",
     "formik": "^1.5.7",
+    "ignore-styles": "^5.0.1",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-breadcrumbs": "^2.1.6",
@@ -20,6 +24,7 @@
     "sweetalert": "^2.1.2"
   },
   "scripts": {
+    "ssr": "NODE_ENV=development node server/bootstrap.js ",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +44,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
   }
 }

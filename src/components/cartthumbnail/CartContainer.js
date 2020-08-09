@@ -10,7 +10,7 @@ class CartContainer extends Component {
         let prod = this.props.thumb;
 
         return (
-            <>
+            <React.Fragment>
                 <Cart/>
                 <div className="productContainer">
                     {
@@ -34,7 +34,7 @@ class CartContainer extends Component {
                     }
                 </div>
 
-            </>
+            </React.Fragment>
         )
     }
 }
