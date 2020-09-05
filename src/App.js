@@ -1,7 +1,7 @@
 import React from 'react';
 import CartContainer from './components/cartthumbnail/CartContainer';
 import './components/stylesheet/main.css';
-import {BrowserRouter as Router, Route, Redirect, withRouter} from "react-router-dom";
+import {Route, Redirect } from "react-router-dom";
 import Header from './components/header/Header';
 import CartItem from './components/itemlist/CartItem';
 import Checkout from "./components/checkoutComponent/Checkout";
@@ -15,7 +15,7 @@ import "./components/stylesheet/main.css";
 
 function App(props) {
     return (
-        <Router>
+        <>
 
             <div className="App">
                 <ToastContainer/>
@@ -57,7 +57,7 @@ function App(props) {
 
                 </div>
             </div>
-        </Router>
+        </>
     );
 }
 
