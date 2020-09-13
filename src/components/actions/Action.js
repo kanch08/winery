@@ -9,7 +9,19 @@ import {
     CHANGE_CART_SIZE,
     ADD_AMOUNT,
     ADD_TO_WISHLIST,
+    ADD_DATA,
+    ADD_IMAGES,
 } from "./actionTypes/cartActions";
+import { store } from "../../store/store";
+import axios from 'axios';
+
+export const getData = () => {
+    axios.get('https://api.mocki.io/v1/dabfeaf3').then( res => {
+            store.dispatch({type: ADD_DATA, data: res.data})
+            store.dispatch({type: ADD_IMAGES, data: res.data})
+        }
+    )
+}
 
 export const addToCart= (data)=>{
     return{

@@ -1,7 +1,7 @@
 import React from 'react';
 import CartContainer from './components/cartthumbnail/CartContainer';
 import './components/stylesheet/main.css';
-import {Route, Redirect } from "react-router-dom";
+import {Route, Redirect} from "react-router-dom";
 import Header from './components/header/Header';
 import CartItem from './components/itemlist/CartItem';
 import Checkout from "./components/checkoutComponent/Checkout";
@@ -16,22 +16,18 @@ import "./components/stylesheet/main.css";
 function App(props) {
     return (
         <>
-
             <div className="App">
                 <ToastContainer/>
                 <Header/>
 
 
                 <div className="cartcontainer">
-                    <Route
-                        path ="/"
-                        component={Breadcrumbs}
+                    {/*<Route*/}
+                    {/*    path="/"*/}
+                    {/*    component={Breadcrumbs}*/}
 
-                    />
-                    <Route
-                        exact path="/"
-                        component={CartContainer}
-                    />
+                    {/*/>*/}
+
                     <Route
                         path="/cart"
                         component={CartItem}
@@ -53,6 +49,10 @@ function App(props) {
                     <Route
                         path="/productdetails/:id"
                         component={ProductDetails}
+                    />
+                    <Route
+                       path="/"
+                        component={CartContainer}
                     />
 
                 </div>

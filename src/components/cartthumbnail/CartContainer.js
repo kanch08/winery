@@ -3,11 +3,17 @@ import ProductThumbnail from './ProductThumbnail';
 import '../stylesheet/cart.css';
 import {connect} from 'react-redux';
 import Cart from "./Cart";
+import { getData } from "../actions/Action";
 
 
 class CartContainer extends Component {
+componentDidMount() {
+    getData();
+}
+
     render() {
         let prod = this.props.thumb;
+        console.log("prod", prod);
 
         return (
             <React.Fragment>
@@ -17,7 +23,7 @@ class CartContainer extends Component {
                         prod.map((item, index) => {
                             return (
                                 <ProductThumbnail
-                                        image={item.image}
+                                        // image={item.image}
                                         productname={item.productname}
                                         category={item.category}
                                         price={item.price}

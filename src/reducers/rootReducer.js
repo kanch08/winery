@@ -9,15 +9,19 @@ import {
     CHANGE_CART_COLOR,
     CLEAR_CART,
     FORM_DATA,
-    ADD_TO_WISHLIST
+    ADD_TO_WISHLIST,
+    ADD_DATA,
+    ADD_IMAGES,
 } from "../components/actions/actionTypes/cartActions";
 
-const initState = data;
+const initState = { images: [], thumb: [], offers: [],  addedItems: [], wishlistItems:[], total: 0};
 const reducer = (state = initState ,action) => {
     switch(action.type){
         case "onChange":{
             return {state}
         }
+        case ADD_DATA :
+            return { ...state, ...action.data};
         default : {
             return state;
         }
@@ -49,12 +53,15 @@ const wishlistReducer= (state=initState,action)=>{
 
 const cartReducer= (state = initState,action)=>{
 
+    if(action.type === ADD_IMAGES) {
+        return { ...action.data}
+    }
+
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
          let addedItem = state.addedItems.find(item=> item.id === action.data.id);
 
         //check if the action id exists in the addedItems
-
         let existed_item= state.addedItems.find(item=> action.data.id === item.id);
         if(existed_item)
         {  console.log('inside existed item if block')

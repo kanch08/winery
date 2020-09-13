@@ -9,3 +9,5 @@ export const CHANGE_CART_SIZE='CHANGE_CART_SIZE';
 export const ADD_AMOUNT = 'ADD_AMOUNT';
 export const CHANGE_CART_COLOR='CHANGE_CART_COLOR';
 export const ADD_TO_WISHLIST='ADD_TO_WISHLIST';
+export const ADD_DATA= 'ADD_DATA';
+export const ADD_IMAGES = 'ADD_IMAGES';

@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "axios": "^0.20.0",
     "express": "^4.17.1",
     "formik": "^1.5.7",
     "ignore-styles": "^5.0.1",
@@ -16,6 +17,7 @@
     "react-notifications": "^1.4.3",
     "react-redux": "^7.0.3",
     "react-reveal": "^1.2.2",
+    "react-router": "^5.2.0",
     "react-router-breadcrumbs-hoc": "^3.2.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
