@@ -19,7 +19,6 @@ const generatePrerequisite = async (req, store) => {
     for (const route of Routes) {
         const match = matchPath(req.url, route);
         if (match) {
-            console.log("match", match)
             try {
                 const res = await route.loadData(store);
                 resObj.isServerRoute = true;
