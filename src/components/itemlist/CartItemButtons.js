@@ -5,7 +5,6 @@ class CartItemButtons extends Component {
         const {handleContinue,emptyCart,gotoCheckout}=this.props;
 
         return (
-
                 <div className="tableButton">
                     <button onClick={()=>handleContinue()}>Continue Shopping</button>
                     <button onClick={()=>emptyCart()}>Empty Cart</button>

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 
 class RadioButton extends Component {
-
-
     render() {
         const {name, colorButtonToggle, imageKeys=[], onRadioChange, currentColor} = this.props;
         const newImageKeys = [];

@@ -11,8 +11,7 @@ import Pulse from 'react-reveal/Pulse';
 
 class CartItem extends Component {
     state={
-
-       isCartEmpty:this.props.isCartEmpty,
+        isCartEmpty:this.props.isCartEmpty,
     }
 
     handleContinue = (event) => {

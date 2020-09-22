@@ -3,11 +3,20 @@ import ProductThumbnail from './ProductThumbnail';
 import '../stylesheet/cart.css';
 import {connect} from 'react-redux';
 import Cart from "./Cart";
+import List from "../List";
+import Toggle from "../Toggle";
+import UserLink from "../UserLink";
 
 
 class CartContainer extends Component {
     render() {
         let prod = this.props.thumb;
+        const items = [
+            {id:1, body: 'This is my first test'},
+            {id:2, body: 'This is my second test'},
+            {id:3, body: 'This is my third test'},
+            {id:4, body: 'This is my fourth test'},
+        ]
 
         return (
             <>
@@ -33,6 +42,8 @@ class CartContainer extends Component {
                         )
                     }
                 </div>
+                <Toggle />
+                <UserLink />
 
             </>
         )
