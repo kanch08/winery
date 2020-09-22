@@ -15,7 +15,7 @@ import {
 } from "../components/actions/actionTypes/cartActions";
 
 const initState = { images: [], thumb: [], offers: [],  addedItems: [], wishlistItems:[], total: 0};
-const reducer = (state = initState ,action) => {
+export const reducer = (state = initState ,action) => {
     switch(action.type){
         case "onChange":{
             return {state}
