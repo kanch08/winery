@@ -3,8 +3,6 @@ import ReactDOMServer from 'react-dom/server';
 import {StaticRouter,  matchPath } from 'react-router-dom';
 import App from '../../src/App';
 import {Provider} from "react-redux";
-import url from "url";
-import {activeRoutes} from "../../src/routesList";
 import {Routes} from '../../src/serverRoutes';
 import {store} from "../../src/store/store";
 
@@ -38,19 +36,7 @@ export default (req, res, next) => {
     generatePrerequisite(req, store)
         .then((resObj) => {
             if (!resObj.isServerRoute) {
-                let isReactRoute = false;
-                for (const route of activeRoutes) {
-                    const matchUrl = url.parse(req.url).pathname;
-                    const match = matchPath(matchUrl, route);
-                    if (match) {
-                        isReactRoute = true;
-                    }
-                }
-                if (isReactRoute) {
-                    res.sendFile(path.resolve(__dirname, '../build/index.html'));
-                } else {
-                    return res.status(404).sendFile(path.resolve(__dirname, '../build/index.html'));
-                }
+                return res.status(400).end();
             } else {
                 fs.readFile(filePath, 'utf8', (err, htmlData) => {
                     if (err) {

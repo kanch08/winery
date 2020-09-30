@@ -17,5 +17,5 @@ app.listen(PORT, (error) => {
     if(error) {
         return console.log('SOmething bad happened', error);
     }
-    console.log("listening on", PORT, '....', process.env.PORT);
+    console.log("listening on", PORT, '....');
 })
