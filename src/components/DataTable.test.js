@@ -10,7 +10,6 @@ describe('testing Data table component',  () => {
         work: 'SE',
     }
     it('test props of DataTable', () => {
-
         const wrapper= mount(<DataTable  items={addedItems}/>);
         expect(wrapper.props().items).toEqual(addedItems);
     })

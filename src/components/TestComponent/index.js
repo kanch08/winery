@@ -8,13 +8,11 @@ class TestComponent extends Component {
     }
 
     handleChange = (e) => {
-        console.log("e", e.target);
         this.setState({name: e.target.value});
     }
 
     render() {
         const {name} = this.state;
-        console.log("name", name)
         return (
             <React.Fragment>
                 <h3>{this.state.count}</h3>

@@ -9,13 +9,8 @@ class DataTable extends Component {
         const addedItems = items.addedItems || [];
 
         //  console.log('items in data table',items);
-
-
         return (
-
             <div className="tableData">
-
-
                 <table className="final-table">
                     <thead>
                     <tr>

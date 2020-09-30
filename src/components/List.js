@@ -1,6 +1,4 @@
 import React from 'react'
-
-/* Components */
 import Paragraph from './Paragraph';
 
 const List = ({ items }) => {

@@ -3,6 +3,7 @@ import { mount, shallow } from 'enzyme';
 import React from "react";
 import configureStore from 'redux-mock-store';
 import {Provider} from 'react-redux';
+import toJson from "enzyme-to-json";
 
 describe("testing Header component", () => {
     it("testing connected components", () => {
@@ -10,7 +11,7 @@ describe("testing Header component", () => {
         const initialState = {};
         const store = mockStore(initialState);
         const wrapper = shallow(<Provider store={store}><Header/></Provider>);
-        expect(wrapper).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
     })
 
     it("testing props", () => {
@@ -32,7 +33,6 @@ describe("testing Header component", () => {
         const mockStore = configureStore();
         const initialState = {};
         const store = mockStore(initialState);
-        debugger;
         const wrapper = mount(<Provider store={store}><Header offers={offers}/></Provider>);
         expect(wrapper.length).toEqual(1);
     })
