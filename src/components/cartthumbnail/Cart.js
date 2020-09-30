@@ -30,10 +30,7 @@ class Cart extends Component {
                      onMouseLeave={this.cartDetailOnOver}
                 >
                     <NavLink to="/Cart">
-                        <img
-                            src={cartimage}
-                            alt="cart"
-                        />
+                        <i className="fa fa-shopping-cart" aria-hidden="true" style={{fontSize: '30px'}} />
                         <div className="badge-container">
                             <NotificationBadge
                                 count={addedItems.length || 0}

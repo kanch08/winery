@@ -13,8 +13,6 @@ componentDidMount() {
 
     render() {
         let prod = this.props.thumb;
-        console.log("prod", prod);
-
         return (
             <React.Fragment>
                 <Cart/>
