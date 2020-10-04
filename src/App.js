@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Breadcrumbs from "./components/breadCrumb";
 import TestComponent from "./components/TestComponent";
 import "./components/stylesheet/main.css";
+import ModalTrigger from "./components/Modals/ModalTrigger";
 
 
 function App(props) {
@@ -55,6 +56,10 @@ function App(props) {
                     <Route
                         path="/test-component"
                         component={TestComponent}
+                    />
+                    <Route
+                        path="/modal"
+                        component={ModalTrigger}
                     />
                 </div>
             </div>

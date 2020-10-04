@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Input from './Input'
 
 class TestComponent extends Component {
@@ -30,7 +30,7 @@ class TestComponent extends Component {
                     placeholder="enter your name"
                     value={name}
                     onChange={(e) => this.handleChange(e)}
-                    />
+                />
             </React.Fragment>
         )
     }

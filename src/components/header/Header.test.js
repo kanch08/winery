@@ -33,7 +33,8 @@ describe("testing Header component", () => {
         const mockStore = configureStore();
         const initialState = {};
         const store = mockStore(initialState);
-        const wrapper = mount(<Provider store={store}><Header offers={offers}/></Provider>);
-        expect(wrapper.length).toEqual(1);
+        const wrapper = shallow(<Provider store={store}><Header offers={offers}/></Provider>);
+        expect(wrapper.props().children.props.offers).not.toBe([]);
+        // expect(wrapper.length).toEqual(1);
     })
 })
