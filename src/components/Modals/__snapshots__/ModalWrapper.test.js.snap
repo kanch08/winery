@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ModalWrapper with component 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "ModalDialog",
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  restoreFocus={true}
+  show={false}
+>
+  <div
+    className="modal-container"
+  >
+    <ModalHeader
+      closeButton={false}
+      closeLabel="Close"
+    >
+      <ModalTitle />
+      <div
+        className="close-btn"
+      >
+        ✕
+      </div>
+    </ModalHeader>
+    <ModalBody>
+      <component
+        component={[Function]}
+      />
+    </ModalBody>
+  </div>
+</Modal>
+`;
+
+exports[`Render ModalWrapper without component 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "ModalDialog",
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  restoreFocus={true}
+  show={false}
+>
+  <div
+    className="modal-container"
+  >
+    <ModalHeader
+      closeButton={false}
+      closeLabel="Close"
+    >
+      <ModalTitle />
+      <div
+        className="close-btn"
+      >
+        ✕
+      </div>
+    </ModalHeader>
+    <ModalBody />
+  </div>
+</Modal>
+`;

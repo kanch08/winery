@@ -6,8 +6,6 @@ import { clearCart } from '../components/actions/Action';
 import Flash from 'react-reveal/Flash';
 import '../components/stylesheet/checkout.css';
 
-
-
 class Customer extends Component {
     handleBackToHomePage=(event)=>{
         this.props.clearCart();
@@ -61,18 +59,18 @@ class Customer extends Component {
     }
 }
 
-const mapStateToProps=(state)=> {
+export const mapStateToProps=(state)=> {
 
     return {
 
         addedItems: state.cartReducer,
         formData: state.formReducer,
-        total:state.amountReducer.amount
+        total:state.amountReducer.amount,
 
     }
 }
 
-const mapDispatchToProps={
+export const mapDispatchToProps={
     clearCart
 }
 

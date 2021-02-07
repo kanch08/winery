@@ -10,18 +10,17 @@ import ProductDetails from "./components/cartthumbnail/ProductDetails";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Breadcrumbs from "./components/breadCrumb";
+import TestComponent from "./components/TestComponent";
 import "./components/stylesheet/main.css";
+import ModalTrigger from "./components/Modals/ModalTrigger";
 
 
 function App(props) {
     return (
         <Router>
-
             <div className="App">
                 <ToastContainer/>
                 <Header/>
-
-
                 <div className="cartcontainer">
                     <Route
                         path ="/"
@@ -54,7 +53,14 @@ function App(props) {
                         path="/productdetails/:id"
                         component={ProductDetails}
                     />
-
+                    <Route
+                        path="/test-component"
+                        component={TestComponent}
+                    />
+                    <Route
+                        path="/modal"
+                        component={ModalTrigger}
+                    />
                 </div>
             </div>
         </Router>

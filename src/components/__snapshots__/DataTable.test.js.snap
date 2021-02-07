@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Data table component renders correctly 1`] = `
+<div
+  className="tableData"
+>
+  <table
+    className="final-table"
+  >
+    <thead>
+      <tr>
+        <th>
+           Id
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Color
+        </th>
+        <th>
+          Size
+        </th>
+        <th>
+          Quantity
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

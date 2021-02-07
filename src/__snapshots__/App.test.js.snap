@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders enzyme testing Paragraph 1`] = `<p />`;
